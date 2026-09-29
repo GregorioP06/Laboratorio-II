@@ -1,2 +1,5 @@
 InlayHints:
-    ParameterNames: false
+    Enabled: false
+
+CompileFlags:
+    Add: [-Wall, -Wextra, -std=c11]
