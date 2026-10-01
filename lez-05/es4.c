@@ -1,21 +1,22 @@
-#include <stddef.h>
 #include <stdio.h>
 
 int main() {
-    int current, pos_count = 0, neg_count = 0, pos_tot = 0;
-    do {
-        puts("Inserisci un numero:");
-        scanf("%d", &current);
-        if (current > 0) {
-            pos_count++;
-            pos_tot += current;
-        } else if (current < 0) {
-            neg_count++;
+    int n_pari = 0, n_dispari = 0, n;
+    float num;
+
+    printf("Quanti valori: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        printf("Valore: ");
+        scanf("%f", &num);
+        if ((int)num % 2 == 0) {
+            n_pari++;
+        } else {
+            n_dispari++;
         }
-    } while (current != 0);
-    printf("# tutti: %d\n", pos_count + neg_count);
-    printf("# positivi: %d\n", pos_count);
-    printf("tot positivi: %d\n", pos_tot);
-    printf("# negativi: %d\n", neg_count);
+    }
+
+    printf("%d pari, %d dispari\n", n_pari, n_dispari);
     return 0;
 }

@@ -1,16 +1,23 @@
 #include <stdio.h>
-#define LEN 20
 
-struct Studente {
-    char nome[LEN];
-    int età;
-};
+#define NUMBER 42
 
 int main() {
-    struct Studente s = {"Mario", 20};
+    int guess;
 
-    printf("Nome: %s, età: %d\n", s.nome, s.età);
-    printf("Dimensione in byte: %ld\n", sizeof(s));
+    puts("Indovina il numero segreto!");
+
+    do {
+        printf("Input: ");
+        scanf("%d", &guess);
+        if (guess < NUMBER) {
+            puts("Il tuo numero è minore.");
+        } else if (guess > NUMBER) {
+            puts("Il tuo numero è maggiore.");
+        }
+    } while (guess != NUMBER);
+
+    puts("Hai indovindato il numero!");
 
     return 0;
 }
