@@ -25,7 +25,7 @@ int main() {
         somma += dipendenti[i].stipendio;
     }
 
-    float media = somma / 2;
+    float media = somma / N;
 
     puts("Sotto la media:");
 
