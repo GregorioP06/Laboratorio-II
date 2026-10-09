@@ -1,0 +1,14 @@
+#include <stdio.h>
+/* perché serve le dimensioni dopo la prima? */
+int f(int a[][2]) { return a[1][1]; }
+
+int main() {
+    int a[2][2];
+
+    a[0][0] = 1;
+    a[0][1] = 2;
+    a[1][0] = 3;
+    a[1][1] = 4;
+
+    printf("%d\n", f(a));
+}
