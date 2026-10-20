@@ -2,4 +2,4 @@ InlayHints:
     Enabled: false
 
 CompileFlags:
-    Add: [-Wall, -Wextra, -std=c11]
+    Add: [-Wall, -Wextra, -Wpedantic, -Wconversion, -std=c11]

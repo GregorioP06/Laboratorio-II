@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C - Compile current file",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
+                "-Wconversion",
+                "-std=c11",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/a.out"
+            ]
+        }
+    ]
+}
