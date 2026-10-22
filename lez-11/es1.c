@@ -16,17 +16,21 @@ int main(void) {
     int M, N;
     puts("Inserisci M <spazio> N:");
     scanf("%d %d", &M, &N);
-    if (M < N || N < 0) {
+    if (M < N || N < 0)
         return EXIT_FAILURE;
-    }
 
-    int **A = malloc(M * sizeof(int));
+    int **A = malloc(M * sizeof(int *));
     if (A == NULL)
         return EXIT_FAILURE;
     for (int i = 0; i < M; i++) {
         A[i] = malloc(M * sizeof(int));
-        if (A[i])
+        if (A[i] == NULL) {
+            while (i > 0) {
+                free(A[--i]);
+            }
+            free(A);
             return EXIT_FAILURE;
+        }
         for (int j = 0; j < M; j++) {
             printf("Inserisci elemento: ");
             scanf("%d", &A[i][j]);
@@ -35,6 +39,11 @@ int main(void) {
 
     int result = sum_submatrix(A, N);
     printf("Risultato: %d\n", result);
+
+    for (int i = 0; i < M; i++) {
+        free(A[i]);
+    }
+    free(A);
 
     return EXIT_SUCCESS;
 }
