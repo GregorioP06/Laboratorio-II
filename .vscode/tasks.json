@@ -11,6 +11,7 @@
                 "-Wpedantic",
                 "-Wconversion",
                 "-std=c11",
+                "-Og",
                 "-g",
                 "${file}",
                 "-o",
